@@ -1,7 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:plantix/constants.dart';
+import 'package:plantix/Screens/calculator_cards.dart';
+import 'package:plantix/Screens/categorylist.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Plantix'),
     );
+    
   }
 }
 
@@ -49,185 +49,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-              Flexible(
+              const Flexible(
                 flex: 2,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.all(8),
-                  shrinkWrap: true,
-                  children: <Widget>[
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/apple.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Apple", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/wheat.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Wheat", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/mango.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Mango", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/onion.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Onion", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/ginger.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Ginger",style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/corn.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Corn", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/grapes.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Grapes", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                    const SizedBox(width: 10,),
-                    Column(
-                      children: [
-                        ClipOval(
-                          child: Container(
-                            height: 80,
-                            width: 80,
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.amber[100],
-                            child: Image.asset('assets/banana.png', fit: BoxFit.cover,),
-                          ),
-                        ),
-                        const Text("Banana", style:TextStyle(fontSize: 18),),
-                      ],
-                    ),
-                  ],
-                )
+                child: categorylist(),
               ),
-              Flexible(
+              const Flexible(
                 flex: 2,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      height: 150,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 223, 222, 222),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 189, 241, 191),
-                              borderRadius: BorderRadius.all(Radius.circular(50))),
-                            child: const Icon(Icons.calculate_rounded, size: 40,),
-                          ),
-                          const SizedBox(height: 8,),
-                          const Text("Calculate fertilizers costs", style:TextStyle(fontSize: 18),)
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 8,),
-                    Container(
-                      height: 100,
-                      padding: const EdgeInsets.all(16),
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 223, 222, 222),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 189, 241, 191),
-                              borderRadius: BorderRadius.all(Radius.circular(50))),
-                            child: const Icon(Icons.spa_rounded, size: 40,),
-                          ),
-                          const SizedBox(height: 8,),
-                          const Text("Pets and diseases", style:TextStyle(fontSize: 18),)
-                        ],
-                      ),
-                    ),
-                  ],
-                )
+                child: cal_cards()
               ),
               // const SizedBox(height: 16,),
               // TextField(
@@ -265,12 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
               //   ),
               // ),
               const SizedBox(height: 16,),
-              Text("Find the diagnosis", style: TextStyle(fontSize: 18, fontWeight:FontWeight.bold), ),
+              const Text("Find the diagnosis", style: TextStyle(fontSize: 18, fontWeight:FontWeight.bold), ),
               Flexible(
                 flex: 4,
                 child:Container(
                   alignment: Alignment.center,
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   decoration: const BoxDecoration(
                     color: Color(0xFFE5F0EA),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -313,8 +141,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Pune 5 May",style: TextStyle(fontSize: 18),),
-                          Text("38\u00B0 C", style: TextStyle(fontSize: 36),),
+                          const Text("Pune 5 May",style: TextStyle(fontSize: 18),),
+                          const Text("38\u00B0 C", style: TextStyle(fontSize: 36),),
                           Text("Sunset 6.57 PM", style: TextStyle(color: Colors.blue[900], fontSize: 18),)
                         ],
                       ),
