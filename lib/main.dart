@@ -15,19 +15,19 @@ class MyApp extends StatelessWidget {
         colorScheme:ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyStatefulWidget(),
+      home: const TB(),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class TB extends StatefulWidget {
+  const TB({Key? key}) : super(key: key);
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<TB> createState() => _TBState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _TBState extends State<TB> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -38,9 +38,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         style: optionStyle,
       ),
     ),
-    Text(
-      'Account',
-      style: optionStyle,
+    Center(
+      child: Text(
+        'Account',
+        style: optionStyle,
+      ),
     ),
   ];
 
