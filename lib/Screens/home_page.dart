@@ -19,17 +19,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(widget.title, style: const TextStyle(fontFamily: 'Sacramento', fontSize: 42, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 155, 49, 0)),),
         titleSpacing: 00.0,
-          centerTitle: true,
-          toolbarHeight: 60.2,
-          toolbarOpacity: 0.8,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(25),
-                bottomLeft: Radius.circular(25)),
-          ),
-          elevation: 0.00,
+        centerTitle: true,
+        toolbarHeight: 60.2,
+        toolbarOpacity: 0.8,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25)),
+        ),
+        elevation: 0.00,
       ),
       body: const SafeArea(
         child: Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantix/constants.dart';
 
 class cal_cards extends StatefulWidget {
   const cal_cards({super.key});
@@ -17,7 +18,7 @@ class _cal_cardsState extends State<cal_cards> {
                 padding: const EdgeInsets.all(16),
                 height: 150,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 223, 222, 222),
+                  color: Color(0xFFEBFDF2),
                   borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -39,7 +40,7 @@ class _cal_cardsState extends State<cal_cards> {
                 height: 100,
                 padding: const EdgeInsets.all(16),
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 223, 222, 222),
+                  color: Color(0xFFEBFDF2),
                   borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

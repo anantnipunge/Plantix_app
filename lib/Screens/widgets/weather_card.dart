@@ -15,7 +15,7 @@ class _weather_cardState extends State<weather_card> {
       width: 400,
       padding: const EdgeInsets.all(8),
       decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 223, 222, 222),
+        color: Color(0xFFEBFDF2),
         borderRadius: BorderRadius.all(Radius.circular(10))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
