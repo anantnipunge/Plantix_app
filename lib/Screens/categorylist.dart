@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plantix/Screens/apple.dart';
+import 'package:plantix/constants.dart';
 
 class categorylist extends StatefulWidget {
   const categorylist({super.key});
@@ -18,12 +20,20 @@ class _categorylistState extends State<categorylist> {
         Column(
           children: [
             ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
-                child: Image.asset('assets/apple.png', fit: BoxFit.cover,),
+              child: GestureDetector(
+                onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FirstScreen()),
+                    );
+                  },
+                child: Container(
+                  height: 80,
+                  width: 80,
+                  padding: const EdgeInsets.all(8),
+                  color: kFoamColor,
+                  child: Image.asset('assets/apple.png', fit: BoxFit.cover,),
+                ),
               ),
             ),
             const Text("Apple", style:TextStyle(fontSize: 18),),
@@ -37,7 +47,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/wheat.png', fit: BoxFit.cover,),
               ),
             ),
@@ -52,7 +62,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/mango.png', fit: BoxFit.cover,),
               ),
             ),
@@ -67,7 +77,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/onion.png', fit: BoxFit.cover,),
               ),
             ),
@@ -82,7 +92,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/ginger.png', fit: BoxFit.cover,),
               ),
             ),
@@ -97,7 +107,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/corn.png', fit: BoxFit.cover,),
               ),
             ),
@@ -112,7 +122,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/grapes.png', fit: BoxFit.cover,),
               ),
             ),
@@ -127,7 +137,7 @@ class _categorylistState extends State<categorylist> {
                 height: 80,
                 width: 80,
                 padding: const EdgeInsets.all(8),
-                color: Colors.amber[100],
+                color: kFoamColor,
                 child: Image.asset('assets/banana.png', fit: BoxFit.cover,),
               ),
             ),
