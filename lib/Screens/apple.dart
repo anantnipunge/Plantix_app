@@ -108,10 +108,7 @@ class _FirstScreen extends State<FirstScreen> {
                             height: 15.0,
                           ),
                           Text(
-                            'A mango is a type of fruit. '
-                            'The mango tree is native to South Asia, '
-                            'from where it has been taken to become one of the most widely cultivated fruits in the tropics.'
-                            'It is harvested in the month of march (summer season) till the end of May.',
+                            'An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found..',
                             style:
                                 TextStyle(letterSpacing: 2.0, fontSize: 15.0),
                           ),
