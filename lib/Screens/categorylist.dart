@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plantix/Screens/apple.dart';
+import 'package:plantix/Models/categoryListModel.dart';
+import 'package:plantix/Screens/categoryView.dart';
 import 'package:plantix/constants.dart';
 
 class categorylist extends StatefulWidget {
@@ -12,19 +13,20 @@ class categorylist extends StatefulWidget {
 class _categorylistState extends State<categorylist> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(8),
       shrinkWrap: true,
-      children: <Widget>[
-        Column(
+      itemCount: categories.length,
+      itemBuilder: (BuildContext context, int index) {  
+        return Column(
           children: [
             ClipOval(
               child: GestureDetector(
                 onTap: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstScreen()),
+                      MaterialPageRoute(builder: (context) => CategoryView( category: categories[index])),
                     );
                   },
                 child: Container(
@@ -32,119 +34,15 @@ class _categorylistState extends State<categorylist> {
                   width: 80,
                   padding: const EdgeInsets.all(8),
                   color: kFoamColor,
-                  child: Image.asset('assets/apple.png', fit: BoxFit.cover,),
+                  child: Image.asset(categories[index].imgurl ,   fit: BoxFit.cover,),
                 ),
               ),
             ),
-            const Text("Apple", style:TextStyle(fontSize: 18),),
+            Text(categories[index].title, style:TextStyle(fontSize: 18),),
           ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/wheat.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Wheat", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/mango.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Mango", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/onion.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Onion", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/ginger.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Ginger",style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/corn.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Corn", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/grapes.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Grapes", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-        const SizedBox(width: 10,),
-        Column(
-          children: [
-            ClipOval(
-              child: Container(
-                height: 80,
-                width: 80,
-                padding: const EdgeInsets.all(8),
-                color: kFoamColor,
-                child: Image.asset('assets/banana.png', fit: BoxFit.cover,),
-              ),
-            ),
-            const Text("Banana", style:TextStyle(fontSize: 18),),
-          ],
-        ),
-      ],
+        );
+      },
+      
     );
   }
 }

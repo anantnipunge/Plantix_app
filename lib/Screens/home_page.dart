@@ -27,7 +27,8 @@ class _MyHomePageState extends State<MyHomePage> {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25)),
+              bottomLeft: Radius.circular(25)
+            ),
         ),
         elevation: 0.00,
       ),

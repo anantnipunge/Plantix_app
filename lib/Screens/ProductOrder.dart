@@ -1,25 +1,25 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:plantix/Models/orders.dart';
+
+import 'package:plantix/Screens/cartPage.dart';
 import 'package:plantix/constants.dart';
+import 'package:provider/provider.dart';
 
-class PlantOrderScreen extends StatefulWidget {
-  late String title;
+class PlantOrderScreen extends StatelessWidget {
+  final String title;
 
-  PlantOrderScreen({super.key, required this.title});
+  PlantOrderScreen({required this.title});
 
-  @override
-  State<PlantOrderScreen> createState() => _PlantOrderScreenState();
-}
-
-class _PlantOrderScreenState extends State<PlantOrderScreen> {
   @override
   Widget build(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context);
+    final List<Product> cartItems = cartProvider.cart.items;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(title),
         titleSpacing: 2.0,
         centerTitle: true,
         toolbarHeight: 60.2,
@@ -32,9 +32,9 @@ class _PlantOrderScreenState extends State<PlantOrderScreen> {
         elevation: 0.00,
       ),
       body: ListView.builder(
-        itemCount: products.length + 1, // Add +1 for the "Buy Now" button
+        itemCount: cartItems.length + 1, // Add +1 for the "Buy Now" button
         itemBuilder: (context, index) {
-          if (index == products.length) {
+          if (index == cartItems.length) {
             // Last item, display the "Buy Now" button
             return Padding(
               padding: const EdgeInsets.all(16.0),
@@ -49,26 +49,26 @@ class _PlantOrderScreenState extends State<PlantOrderScreen> {
               ),
             );
           } else {
-            final plant = products[index];
+            final product = cartItems[index];
             return Column(
               children: [
                 SizedBox(height: 8),
                 ListTile(
-                  leading: Image.asset(
-                    plant.imageUrl,
-                    width: 60,
-                    height: 60,
-                    fit: BoxFit.cover,
-                  ),
+                  // leading: Image.asset(
+                  //   // product.imageUrl, // Assuming your Product model has an 'imageUrl' property
+                  //   width: 60,
+                  //   height: 60,
+                  //   fit: BoxFit.cover,
+                  // ),
                   title: Text(
-                    plant.name,
+                    product.name,
                     style: TextStyle(fontSize: 18, color: kDarkGreenColor),
                   ),
                   onTap: () {
                     // Handle tile tap event
                   },
                   trailing: Text(
-                    plant.price,
+                    '\$${product.price.toStringAsFixed(2)}',
                     style: TextStyle(
                         fontWeight: FontWeight.w900,
                         fontSize: 18,

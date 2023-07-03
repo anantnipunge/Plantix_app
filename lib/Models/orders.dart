@@ -1,56 +1,55 @@
-  class Plant {
+  class Item {
   final String name;
   final String imageUrl;
   final String price;
 
-  Plant({required this.name, required this.imageUrl, required this.price});
+  Item({required this.name, required this.imageUrl, required this.price});
 }
-
   
-  final List<Plant> plants = [
-    Plant(
+  final List<Item> products = [
+    Item(
       name: 'Grapes',
       imageUrl: 'assets/grapes.png',
       price: "\$300.00",
     ),
-    Plant(
+    Item(
       name: 'Ginger',
       imageUrl: 'assets/ginger.png',
       price: "\$345.00",
 
     ),
-    Plant(
+    Item(
       name: 'Onion',
       imageUrl: 'assets/onion.png',
       price: "\$335.00",
     ),
-    Plant(
+    Item(
       name: 'Banana',
       imageUrl: 'assets/banana.png',
       price: "\$353.00",
 
     ),
-    Plant(
+    Item(
       name: 'Grapes',
       imageUrl: 'assets/grapes.png',
       price: "\$300.00",
     ),
-    Plant(
+    Item(
       name: 'Ginger',
       imageUrl: 'assets/ginger.png',
       price: "\$345.00",
 
     ),
-    Plant(
+    Item(
       name: 'Onion',
       imageUrl: 'assets/onion.png',
       price: "\$335.00",
     ),
-    Plant(
+    Item(
       name: 'Banana',
       imageUrl: 'assets/banana.png',
       price: "\$353.00",
 
     ),
-    // Add more plants here...
+    // Add more Items here...
   ];

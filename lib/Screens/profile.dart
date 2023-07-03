@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantix/constants.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -17,15 +18,17 @@ class ProfilePage extends StatelessWidget {
               bottomLeft: Radius.circular(25)),
         ),
         elevation: 0.00,
+        automaticallyImplyLeading: false,
       ),
       body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage('assets/user.jpeg',)
-            ),
+                radius: 80,
+                backgroundImage: AssetImage(
+                  'assets/user.jpeg',
+                )),
             SizedBox(height: 20),
             Text(
               'John Doe',
@@ -53,6 +56,13 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        elevation: 0,
+        hoverColor: kDarkGreenColor,
+        focusColor: kDarkGreenColor,
+        child: Icon(Icons.logout_outlined),
       ),
     );
   }
