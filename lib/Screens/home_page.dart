@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:plantix/Screens/calculator_cards.dart';
 import 'package:plantix/Screens/categorylist.dart';
 import 'package:plantix/Screens/widgets/diagnosis.dart';
+import 'package:plantix/Screens/widgets/searchbar.dart';
 import 'package:plantix/Screens/widgets/weather_card.dart';
+import 'package:plantix/constants.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,65 +18,48 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title, style: const TextStyle(fontFamily: 'Sacramento', fontSize: 42, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 155, 49, 0)),),
-        titleSpacing: 00.0,
-        centerTitle: true,
-        toolbarHeight: 60.2,
-        toolbarOpacity: 0.8,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25)
-            ),
-        ),
-        elevation: 0.00,
-      ),
-      body: const SafeArea(
+      // appBar: AppBar(
+      //   leading:
+      //   titleSpacing: 00.0,
+      //   centerTitle: true,
+      //   toolbarHeight: 60.2,
+      //   toolbarOpacity: 0.8,
+      // ),
+      body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-              Flexible(
-                flex: 2,
+            HomeSearchBar(),
+            SizedBox(height: 8,),
+            Text.rich(
+                TextSpan(
+                  text: 'Hello', 
+                  style: TextStyle(fontSize: 24),
+                  children: [
+                    TextSpan(text: ' User \n', style: TextStyle(fontStyle: FontStyle.italic)),
+                    TextSpan(text: 'Good Afternoon', style: TextStyle(fontWeight: FontWeight.bold, color: kDarkGreenColor)),
+                  ],
+                ),
+              ),
+              SizedBox(height: 8,),
+              const Flexible(
+                flex: 1,
                 child: categorylist(),
               ),
-              Flexible(
-                flex: 2,
-                child: cal_cards()
-              ),
+              diagnosis(),
               SizedBox(height: 16,),
-              Text("Find the diagnosis", style: TextStyle(fontSize: 18, fontWeight:FontWeight.bold), ),
-              Flexible(
-                flex: 3,
-                child: diagnosis(),
-              ),
-              SizedBox(height: 16,),
-              Flexible(
-                flex: 2,
-                child: weather_card(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                    // weather_card(),
+                    ],
+                  ),
+                )
               )
-              // const SizedBox(height: 16,),
-              // Flexible(
-              //   flex: 1,
-              //   child: CategorySelector(
-              //     selected: selected,
-              //     categories: const [
-              //       'Recommended',
-              //       'Top',
-              //       'Indoor',
-              //       'Outdoor'
-              //     ],
-              //     onTap: (index) {
-              //       setState(() {
-              //         selected = index;
-              //       });
-              //     },
-              //   ),
-              // )
             ],
           ),
         ),
@@ -89,5 +73,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-

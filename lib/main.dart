@@ -86,6 +86,71 @@ class _TBState extends State<TB> {
 }
 
 
+// import 'dart:io';
+// import 'package:flutter/material.dart';
+// import 'package:image_picker/image_picker.dart';
+
+// void main() => runApp(const MyApp());
+
+// class MyApp extends StatelessWidget{
+//   const MyApp({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Home(),
+//     );
+//   }
+// }
+
+// class Home extends StatefulWidget{
+//   @override
+//   _HomeState createState() => _HomeState();
+// }
+
+// class _HomeState extends State<Home> { 
+
+//   ImagePicker picker = ImagePicker();
+//   XFile? image;
+
+//   @override
+//   Widget build(BuildContext context) { 
+//     return  Scaffold(
+//           appBar: AppBar(
+//             title: Text("Image Picker from Gallery"),
+//             backgroundColor: Colors.redAccent
+//           ),
+//           body: Container(
+//             padding: EdgeInsets.only(top:20, left:20, right:20),
+//             alignment: Alignment.topCenter,
+//             child: Column(
+//               children: [
+
+//                 ElevatedButton(
+//                   onPressed: () async {
+//                       image = await picker.pickImage(source: ImageSource.gallery); 
+//                       setState(() {
+//                         //update UI
+//                       });
+//                   }, 
+//                   child: Text("Pick Image")
+//                 ),
+//                 image == null?Container():
+//                 Expanded(
+//                   child: SingleChildScrollView(
+//                     child: Image.file(File(image!.path)),
+//                   )
+//                 ) 
+//               ],
+//             )
+//           )
+//       );
+//   }
+// }
+
+
+
+
+
 // import 'package:flutter/material.dart';
 // import 'package:plantix/Screens/ProductOrder.dart';
 // import 'package:provider/provider.dart';
