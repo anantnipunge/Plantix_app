@@ -1,16 +1,19 @@
 # plantix
 
-A new Flutter project.
+Plantix is a Android application built using flutter. It works as a advisory application to the farmers, where farmers can purchase the products. It has a great social community section where farmers can interact with each other.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+## Previews
 
-A few resources to get you started if this is your first Flutter project:
+#### Home Screen
+![image](https://github.com/anantnipunge/plantix_app/assets/82041920/5b7a10cd-c5ec-4dcd-91c4-61f632800252)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### Community Screen
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+#### Product page
+
+
+#### Cart page
+
