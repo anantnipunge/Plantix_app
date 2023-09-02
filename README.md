@@ -1,4 +1,4 @@
-# plantix
+# Planture
 
 Plantix is a Android application built using flutter. It works as a advisory application to the farmers, where farmers can purchase the products. It has a great social community section where farmers can interact with each other.
 
